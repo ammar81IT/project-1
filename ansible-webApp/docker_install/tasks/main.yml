@@ -11,6 +11,7 @@
 - name: Add Docker repo
   yum_repository:
     name: docker-ce-stable
+    description: Docker CE Stable
     async: yes # not required. If set to C(yes) Yum will download packages and metadata from this repo in parallel, if possible.
     file: docker-ce
     baseurl: "{{ docker_repo }}"
