@@ -3,7 +3,6 @@
   yum:
     pkg:
       - ca-certificates
-      - curl
       - software-properties-common
       - python3-pip
       - virtualenv
