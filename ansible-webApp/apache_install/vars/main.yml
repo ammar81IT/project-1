@@ -1,2 +1,4 @@
 ---
 # vars file for apache_install
+new_html_file: index.html
+destination_location: /var/www/html
