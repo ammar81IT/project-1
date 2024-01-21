@@ -1,2 +1,25 @@
 ---
 # tasks file for apache_install
+- name: Install Docker SDK for python
+  command: "pip3 install docker-py"
+
+- name: Install httpd docker image
+  docker_image:
+    name: httpd
+    tag: latest
+    source: pull
+
+#TODO Break into separate role
+- copy:
+    src: index.html
+    dest: /var/www/html/index.html
+
+- name: Launching httpd container
+  docker_container:
+    name: httpd
+    image: httpd
+    exposed_ports: 80
+    ports:
+      - "8080:80"
+    state: started
+    restart_policy: always
