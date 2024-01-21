@@ -10,9 +10,16 @@
     source: pull
 
 #TODO Break into separate role
-- copy:
-    src: index.html
-    dest: /var/www/html/index.html
+# - copy:
+#     src: index.html
+#     dest: /var/www/html/index.html
+
+- name: customize index html
+  copy:
+    src: "{{ new_html_file }}"
+    dest: "{{ destination_location }}"
+    mode: 0644
+    backup: yes
 
 - name: Launching httpd container
   docker_container:
