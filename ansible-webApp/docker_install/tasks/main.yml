@@ -12,7 +12,7 @@
       command: >
         yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
       register: ycm
-    - name: "Enable and run Docer CE"
+    - name: "Enable and run Docker CE"
       service:
         name: docker
         state: started
