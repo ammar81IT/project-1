@@ -3,5 +3,5 @@
   become: true
   roles:
     - docker_install
-    - virtual_host_config
-    - website_deployment
+    # - virtual_host_config
+    # - website_deployment
