@@ -1,0 +1,7 @@
+- name: Create Apache web server
+  hosts: all
+  become: true
+  roles:
+    - docker_install
+    - virtual_host_config
+    - website_deployment
